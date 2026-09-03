@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>قراءة السورة | أَثَر</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+    background:#f6f0e5;
+    color:#123f32;
+    min-height:100vh;
+    padding-bottom:35px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+    background:linear-gradient(145deg,#063d2d,#12634a);
+
+    color:white;
+
+    padding:18px 18px 25px;
+
+    border-radius:0 0 35px 35px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+}
+
+.header-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.back-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.1);
+
+    color:white;
+
+    font-size:23px;
+
+    cursor:pointer;
+
+}
+
+.header-title{
+
+    text-align:center;
+
+    flex:1;
+
+}
+
+.header-title h1{
+
+    color:#e4c568;
+
+    font-size:25px;
+
+    font-weight:800;
+
+}
+
+.header-title p{
+
+    font-size:11px;
+
+    opacity:.8;
+
+    letter-spacing:2px;
+
+    margin-top:2px;
+
+}
+
+.header-space{
+
+    width:45px;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    width:92%;
+
+    max-width:700px;
+
+    margin:25px auto;
+
+}
+
+
+/* =========================
+   SURAH INFO
+========================= */
+
+.surah-info{
+
+    background:#fffdf8;
+
+    border-radius:28px;
+
+    padding:25px 20px;
+
+    text-align:center;
+
+    box-shadow:0 8px 30px rgba(24,55,42,.08);
+
+    margin-bottom:20px;
+
+}
+
+.surah-name{
+
+    color:#063d2d;
+
+    font-family:'Amiri',serif;
+
+    font-size:38px;
+
+    font-weight:700;
+
+}
+
+.surah-details{
+
+    margin-top:8px;
+
+    color:#806b38;
+
+    font-size:13px;
+
+}
+
+.bismillah{
+
+    font-family:'Amiri',serif;
+
+    font-size:30px;
+
+    color:#163f33;
+
+    margin-top:20px;
+
+    line-height:2;
+
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading{
+
+    background:#fffdf8;
+
+    border-radius:25px;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    box-shadow:0 8px 30px rgba(24,55,42,.07);
+
+}
+
+.loading-icon{
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+}
+
+.loading p{
+
+    color:#555;
+
+    font-size:15px;
+
+}
+
+
+/* =========================
+   AYAH
+========================= */
+
+.ayah-card{
+
+    background:#fffdf8;
+
+    border-radius:25px;
+
+    padding:24px 20px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 6px 22px rgba(24,55,42,.06);
+
+    border:1px solid #eee4d3;
+
+}
+
+.ayah-text{
+
+    font-family:'Amiri',serif;
+
+    font-size:28px;
+
+    line-height:2.25;
+
+    color:#171717;
+
+    text-align:right;
+
+}
+
+.ayah-number{
+
+    display:inline-flex;
+
+    width:34px;
+
+    height:34px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#e8d8a9;
+
+    color:#705b2c;
+
+    font-family:'Cairo',sans-serif;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    margin-left:8px;
+
+    vertical-align:middle;
+
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error{
+
+    display:none;
+
+    background:#fffdf8;
+
+    border-radius:25px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    box-shadow:0 8px 30px rgba(24,55,42,.08);
+
+}
+
+.error-icon{
+
+    font-size:45px;
+
+    margin-bottom:12px;
+
+}
+
+.error h2{
+
+    color:#063d2d;
+
+    margin-bottom:8px;
+
+}
+
+.error p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.surah-navigation{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:25px;
+
+}
+
+.nav-btn{
+
+    flex:1;
+
+    border:0;
+
+    border-radius:18px;
+
+    background:#063d2d;
+
+    color:white;
+
+    padding:14px 8px;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+.nav-btn:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* =========================
+   FONT CONTROLS
+========================= */
+
+.controls{
+
+    background:#fffdf8;
+
+    border-radius:20px;
+
+    padding:12px;
+
+    margin-bottom:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    box-shadow:0 5px 18px rgba(24,55,42,.06);
+
+}
+
+.controls span{
+
+    font-size:13px;
+
+    color:#555;
+
+}
+
+.control-btn{
+
+    width:38px;
+
+    height:38px;
+
+    border:1px solid #e1d6c1;
+
+    background:#fbf7ee;
+
+    border-radius:12px;
+
+    color:#063d2d;
+
+    font-size:17px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px){
+
+    .container{
+
+        width:92%;
+
+        margin-top:20px;
+
+    }
+
+    .surah-name{
+
+        font-size:34px;
+
+    }
+
+    .bismillah{
+
+        font-size:25px;
+
+    }
+
+    .ayah-card{
+
+        padding:20px 16px;
+
+        border-radius:22px;
+
+    }
+
+    .ayah-text{
+
+        font-size:25px;
+
+        line-height:2.2;
+
+    }
+
+    .ayah-number{
+
+        width:31px;
+
+        height:31px;
+
+        font-size:11px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+    <div class="header-top">
+
+        <button
+            class="back-btn"
+            onclick="goBack()">
+
+            → 
+
+        </button>
+
+
+        <div class="header-title">
+
+            <h1>أَثَر</h1>
+
+            <p>ATHAR</p>
+
+        </div>
+
+
+        <div class="header-space"></div>
+
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <!-- معلومات السورة -->
+
+    <section class="surah-info">
+
+        <div
+            class="surah-name"
+            id="surahName">
+
+            جاري التحميل...
+
+        </div>
+
+
+        <div
+            class="surah-details"
+            id="surahDetails">
+
+            ...
+
+        </div>
+
+
+        <div
+            class="bismillah"
+            id="bismillah">
+
+            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+
+        </div>
+
+    </section>
+
+
+
+    <!-- التحكم في حجم الخط -->
+
+    <div class="controls">
+
+        <span>حجم الخط</span>
+
+        <button
+            class="control-btn"
+            onclick="changeFontSize(-2)">
+
+            −
+
+        </button>
+
+        <button
+            class="control-btn"
+            onclick="changeFontSize(2)">
+
+            +
+
+        </button>
+
+    </div>
+
+
+
+    <!-- التحميل -->
+
+    <section
+        class="loading"
+        id="loading">
+
+        <div class="loading-icon">
+            📖
+        </div>
+
+        <p>
+            جاري تحميل السورة...
+        </p>
+
+    </section>
+
+
+
+    <!-- الخطأ -->
+
+    <section
+        class="error"
+        id="error">
+
+        <div class="error-icon">
+            ⚠️
+        </div>
+
+        <h2>
+            حصلت مشكلة
+        </h2>
+
+        <p>
+            لم نتمكن من تحميل السورة الآن.
+            <br>
+            حاول مرة أخرى بعد قليل.
+        </p>
+
+    </section>
+
+
+
+    <!-- الآيات -->
+
+    <section
+        id="ayahs">
+    </section>
+
+
+
+    <!-- التنقل بين السور -->
+
+    <div class="surah-navigation">
+
+        <button
+            class="nav-btn"
+            onclick="previousSurah()">
+
+            ← السورة السابقة
+
+        </button>
+
+
+        <button
+            class="nav-btn"
+            onclick="nextSurah()">
+
+            السورة التالية →
+
+        </button>
+
+    </div>
+
+
+</main>
+
+
+
+<script>
+
+
+/* =========================
+   معرفة رقم السورة
+========================= */
+
+const params = new URLSearchParams(window.location.search);
+
+let surahNumber = parseInt(params.get("surah")) || 1;
+
+
+/* التأكد أن الرقم بين 1 و114 */
+
+if(surahNumber < 1){
+
+    surahNumber = 1;
+
+}
+
+if(surahNumber > 114){
+
+    surahNumber = 114;
+
+}
+
+
+/* =========================
+   حجم الخط
+========================= */
+
+let currentFontSize = 28;
+
+
+/* =========================
+   تحميل السورة
+========================= */
+
+async function loadSurah(){
+
+    const loading = document.getElementById("loading");
+
+    const error = document.getElementById("error");
+
+    const ayahsContainer = document.getElementById("ayahs");
+
+    try{
+
+        const response = await fetch(
+            "https://api.alquran.cloud/v1/surah/" +
+            surahNumber +
+            "/quran-uthmani"
+        );
+
+
+        if(!response.ok){
+
+            throw new Error("API Error");
+
+        }
+
+
+        const result = await response.json();
+
+
+        if(
+            !result.data ||
+            !result.data.ayahs
+        ){
+
+            throw new Error("No data");
+
+        }
+
+
+        const surah = result.data;
+
+
+        document.getElementById("surahName").textContent =
+            surah.name;
+
+
+        document.getElementById("surahDetails").textContent =
+            surah.numberOfAyahs +
+            " آية • " +
+            getRevelationType(surah.revelationType);
+
+
+        /* سورة التوبة لا نعرض قبلها البسملة */
+
+        if(surahNumber === 9){
+
+            document.getElementById("bismillah").style.display =
+                "none";
+
+        }
+
+
+        ayahsContainer.innerHTML = "";
+
+
+        surah.ayahs.forEach(function(ayah){
+
+            const card = document.createElement("article");
+
+            card.className = "ayah-card";
+
+
+            const text = document.createElement("div");
+
+            text.className = "ayah-text";
+
+
+            const number = document.createElement("span");
+
+            number.className = "ayah-number";
+
+            number.textContent = ayah.numberInSurah;
+
+
+            text.appendChild(number);
+
+
+            const ayahText =
+                document.createTextNode(
+                    " " + ayah.text
+                );
+
+
+            text.appendChild(ayahText);
+
+
+            card.appendChild(text);
+
+
+            ayahsContainer.appendChild(card);
+
+        });
+
+
+        loading.style.display = "none";
+
+    }
+
+    catch(errorObject){
+
+        console.error(errorObject);
+
+        loading.style.display = "none";
+
+        error.style.display = "block";
+
+    }
+
+}
+
+
+/* =========================
+   نوع السورة
+========================= */
+
+function getRevelationType(type){
+
+    if(type === "Meccan"){
+
+        return "مكية";
+
+    }
+
+    return "مدنية";
+
+}
+
+
+/* =========================
+   حجم الخط
+========================= */
+
+function changeFontSize(amount){
+
+    currentFontSize += amount;
+
+
+    if(currentFontSize < 20){
+
+        currentFontSize = 20;
+
+    }
+
+
+    if(currentFontSize > 38){
+
+        currentFontSize = 38;
+
+    }
+
+
+    const ayahs =
+        document.querySelectorAll(".ayah-text");
+
+
+    ayahs.forEach(function(ayah){
+
+        ayah.style.fontSize =
+            currentFontSize + "px";
+
+    });
+
+}
+
+
+/* =========================
+   السابق
+========================= */
+
+function previousSurah(){
+
+    if(surahNumber > 1){
+
+        window.location.href =
+            "surah.html?surah=" +
+            (surahNumber - 1);
+
+    }
+
+}
+
+
+/* =========================
+   التالي
+========================= */
+
+function nextSurah(){
+
+    if(surahNumber < 114){
+
+        window.location.href =
+            "surah.html?surah=" +
+            (surahNumber + 1);
+
+    }
+
+}
+
+
+/* =========================
+   رجوع
+========================= */
+
+function goBack(){
+
+    window.location.href = "quran.html";
+
+}
+
+
+/* تشغيل */
+
+loadSurah();
+
+</script>
+
+
+</body>
+
+  </html>
