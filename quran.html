@@ -2,7 +2,9 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>القرآن الكريم | أَثَر</title>
@@ -21,307 +23,467 @@ body{
     font-family:'Cairo',sans-serif;
     background:#f6f0e5;
     color:#123f32;
+    min-height:100vh;
     padding-bottom:35px;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 .header{
-    background:linear-gradient(145deg,#063d2d,#12634a);
-    color:white;
-    padding:20px 20px 35px;
-    border-radius:0 0 40px 40px;
-    position:relative;
-    overflow:hidden;
-}
 
-.header:after{
-    content:"";
-    position:absolute;
-    width:220px;
-    height:220px;
-    border:1px solid rgba(228,197,104,.35);
-    border-radius:50%;
-    top:-120px;
-    left:-80px;
+    background:linear-gradient(145deg,#063d2d,#12634a);
+
+    color:white;
+
+    padding:18px 18px 30px;
+
+    border-radius:0 0 38px 38px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
 }
 
 .top{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
-    position:relative;
-    z-index:2;
+
 }
 
-.back{
+.back-btn{
+
     width:45px;
+
     height:45px;
+
     border-radius:50%;
+
     border:1px solid rgba(255,255,255,.15);
-    background:rgba(255,255,255,.09);
+
+    background:rgba(255,255,255,.1);
+
     color:white;
-    font-size:24px;
+
+    font-size:22px;
+
     cursor:pointer;
+
 }
 
-.header-title{
+.title{
+
     text-align:center;
-    margin-top:20px;
-    position:relative;
-    z-index:2;
+
+    flex:1;
+
 }
 
-.header-title .icon{
-    font-size:42px;
-}
+.title h1{
 
-.header-title h1{
-    font-family:'Amiri',serif;
-    font-size:32px;
-    margin-top:3px;
-}
-
-.header-title p{
     color:#e4c568;
-    font-size:13px;
-    letter-spacing:3px;
-    margin-top:3px;
+
+    font-size:27px;
+
+    font-weight:800;
+
 }
 
-/* CONTENT */
+.title p{
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    opacity:.8;
+
+    margin-top:2px;
+
+}
+
+.header-space{
+
+    width:45px;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
+
     width:92%;
-    max-width:650px;
+
+    max-width:700px;
+
     margin:22px auto;
+
 }
 
-/* SEARCH */
+
+/* =========================
+   SEARCH
+========================= */
 
 .search-box{
+
     background:#fffdf8;
+
     border-radius:22px;
-    padding:12px 16px;
+
+    padding:8px;
+
     display:flex;
+
     align-items:center;
-    gap:10px;
-    box-shadow:0 7px 25px rgba(24,55,42,.07);
-    margin-bottom:20px;
+
+    box-shadow:0 7px 25px rgba(24,55,42,.08);
+
+    margin-bottom:18px;
+
 }
 
-.search-box span{
+.search-icon{
+
     font-size:21px;
+
+    padding:0 10px;
+
 }
 
 .search-box input{
+
     width:100%;
+
     border:0;
-    outline:none;
+
+    outline:0;
+
     background:transparent;
-    font-family:'Cairo',sans-serif;
+
+    font-family:inherit;
+
     font-size:15px;
+
     color:#123f32;
+
+    padding:12px 5px;
+
 }
 
 .search-box input::placeholder{
+
     color:#999;
+
 }
 
-/* DAILY AYAH */
 
-.ayah-card{
+/* =========================
+   DAILY AYAH
+========================= */
+
+.daily-ayah{
+
     background:#fffaf0;
-    border:1px solid #e5d39f;
+
+    border:1px solid #e7d49d;
+
     border-radius:25px;
-    padding:22px;
+
+    padding:20px;
+
     text-align:center;
-    margin-bottom:20px;
+
+    margin-bottom:22px;
+
+    box-shadow:0 7px 22px rgba(24,55,42,.06);
+
 }
 
-.ayah-title{
-    color:#126044;
+.daily-ayah-title{
+
+    color:#146044;
+
+    font-size:17px;
+
     font-weight:800;
+
     margin-bottom:10px;
+
 }
 
-.ayah{
+.daily-ayah-text{
+
     font-family:'Amiri',serif;
-    font-size:25px;
-    line-height:1.9;
-    color:#222;
+
+    font-size:23px;
+
+    line-height:2;
+
+    color:#171717;
+
 }
 
-.ayah-source{
-    color:#8b7135;
+.daily-ayah-source{
+
+    color:#8a7133;
+
     font-size:12px;
+
     margin-top:5px;
+
 }
 
-/* SURAH LIST */
+
+/* =========================
+   SECTION TITLE
+========================= */
 
 .section-title{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
-    margin:15px 4px;
+
+    margin-bottom:15px;
+
 }
 
 .section-title h2{
-    font-size:21px;
+
+    font-size:22px;
+
+    font-weight:800;
+
 }
 
 .section-title span{
+
+    color:#8a7133;
+
     font-size:12px;
-    color:#777;
+
 }
 
-.surahs{
+
+/* =========================
+   SURAH LIST
+========================= */
+
+.surah-list{
+
     display:flex;
+
     flex-direction:column;
+
     gap:10px;
+
 }
 
 .surah{
+
+    width:100%;
+
+    border:1px solid #eee3d0;
+
     background:#fffdf8;
-    border-radius:20px;
-    padding:13px 15px;
+
+    border-radius:22px;
+
+    padding:14px;
+
     display:flex;
+
     align-items:center;
+
     gap:13px;
-    box-shadow:0 5px 18px rgba(24,55,42,.055);
+
     cursor:pointer;
+
     transition:.2s;
-    border:1px solid transparent;
+
+    text-align:right;
+
+    font-family:inherit;
+
 }
 
 .surah:active{
+
     transform:scale(.98);
+
 }
 
-.number{
-    width:42px;
-    height:42px;
-    min-width:42px;
-    border-radius:50%;
-    background:#edf3e9;
-    color:#126044;
+.surah-number{
+
+    min-width:43px;
+
+    height:43px;
+
+    border-radius:15px;
+
+    background:#e8d8a9;
+
+    color:#705b2c;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    font-weight:800;
+
     font-size:13px;
+
+    font-weight:800;
+
 }
 
 .surah-info{
+
     flex:1;
+
 }
 
 .surah-name{
+
     font-family:'Amiri',serif;
-    font-size:23px;
+
+    font-size:24px;
+
+    color:#063d2d;
+
     font-weight:700;
-    color:#173f33;
+
 }
 
 .surah-meta{
+
     font-size:11px;
+
     color:#888;
-    margin-top:1px;
+
+    margin-top:2px;
+
 }
 
-.surah-arrow{
-    color:#a88c49;
-    font-size:18px;
+.arrow{
+
+    color:#8a7133;
+
+    font-size:20px;
+
 }
 
-/* EMPTY */
 
-.empty{
+/* =========================
+   NO RESULT
+========================= */
+
+.no-result{
+
     display:none;
-    text-align:center;
-    padding:30px;
-    color:#777;
+
     background:#fffdf8;
-    border-radius:20px;
-}
 
-/* FOOTER */
+    border-radius:22px;
 
-.footer{
+    padding:30px 20px;
+
     text-align:center;
-    color:#8b8b8b;
-    font-size:12px;
-    margin-top:30px;
-}
 
-.footer strong{
-    color:#126044;
+    color:#777;
+
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:420px){
 
-    .header-title h1{
-        font-size:29px;
-    }
+    .container{
 
-    .ayah{
-        font-size:23px;
+        width:91%;
+
     }
 
     .surah{
+
         padding:12px;
+
+    }
+
+    .surah-number{
+
+        min-width:40px;
+
+        height:40px;
+
     }
 
     .surah-name{
-        font-size:21px;
+
+        font-size:22px;
+
     }
 
-    .number{
-        width:40px;
-        height:40px;
-        min-width:40px;
+    .daily-ayah-text{
+
+        font-size:21px;
+
     }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="header">
 
     <div class="top">
 
-        <button class="back" onclick="goHome()">
-            ←
+        <button
+            class="back-btn"
+            onclick="goHome()">
+
+            →
+
         </button>
 
-        <div style="font-size:14px;">
-            أَثَر 🌿
+
+        <div class="title">
+
+            <h1>
+                القرآن الكريم
+            </h1>
+
+            <p>
+                HOLY QURAN
+            </p>
+
         </div>
 
-    </div>
 
-
-    <div class="header-title">
-
-        <div class="icon">
-            📖
-        </div>
-
-        <h1>
-            القرآن الكريم
-        </h1>
-
-        <p>
-            كَلَامُ اللهِ • نُورٌ وَهُدًى
-        </p>
+        <div class="header-space"></div>
 
     </div>
 
@@ -332,44 +494,51 @@ body{
 <main class="container">
 
 
-    <!-- SEARCH -->
+    <!-- =========================
+         SEARCH
+    ========================= -->
 
     <div class="search-box">
 
-        <span>🔎</span>
+        <div class="search-icon">
+            🔎
+        </div>
 
         <input
             type="text"
-            id="search"
+            id="searchInput"
             placeholder="ابحث عن سورة..."
-            oninput="searchSurahs()"
-        >
+            oninput="searchSurahs()">
 
     </div>
 
 
 
-    <!-- AYAH -->
+    <!-- =========================
+         AYAH
+    ========================= -->
 
-    <section class="ayah-card">
+    <section class="daily-ayah">
 
-        <div class="ayah-title">
+        <div class="daily-ayah-title">
             ✦ آية اليوم ✦
         </div>
 
-        <div class="ayah">
-            ﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾
+        <div class="daily-ayah-text">
+            ﴿ وَاذْكُر رَّبَّكَ إِذَا نَسِيتَ ﴾
         </div>
 
-        <div class="ayah-source">
-            سورة الرعد — الآية 28
+        <div class="daily-ayah-source">
+            سورة الكهف — الآية 24
         </div>
 
     </section>
 
 
 
-    <!-- TITLE -->
+    <!-- =========================
+         TITLE
+    ========================= -->
 
     <div class="section-title">
 
@@ -385,27 +554,39 @@ body{
 
 
 
-    <!-- SURAH LIST -->
+    <!-- =========================
+         SURAH LIST
+    ========================= -->
 
-    <div class="surahs" id="surahs"></div>
-
-    <div class="empty" id="empty">
-        لم نجد سورة بهذا الاسم 🔎
+    <div
+        class="surah-list"
+        id="surahList">
     </div>
 
 
+    <div
+        class="no-result"
+        id="noResult">
 
-    <div class="footer">
-        <strong>أَثَر 🌿</strong>
-        <br>
-        اجعل للقرآن أثرًا في يومك
+        🔎
+
+        <br><br>
+
+        لم نجد سورة بهذا الاسم.
+
     </div>
+
 
 </main>
 
 
 
 <script>
+
+
+/* =========================
+   بيانات السور
+========================= */
 
 const surahs = [
 
@@ -527,48 +708,56 @@ const surahs = [
 ];
 
 
-function displaySurahs(list){
+/* =========================
+   إنشاء قائمة السور
+========================= */
 
-    const container = document.getElementById("surahs");
+function renderSurahs(list){
 
-    const empty = document.getElementById("empty");
+    const container =
+        document.getElementById("surahList");
+
+    const noResult =
+        document.getElementById("noResult");
+
 
     container.innerHTML = "";
 
+
     if(list.length === 0){
 
-        empty.style.display = "block";
+        noResult.style.display = "block";
 
         return;
 
     }
 
-    empty.style.display = "none";
+
+    noResult.style.display = "none";
 
 
-    list.forEach((surah,index)=>{
+    list.forEach(function(surah){
 
-        const originalNumber =
-            surahs.findIndex(item => item[0] === surah[0]) + 1;
+        const number =
+            surahs.indexOf(surah) + 1;
 
-        const item = document.createElement("div");
+        const button =
+            document.createElement("button");
 
-        item.className = "surah";
+        button.className = "surah";
 
-        item.onclick = function(){
 
-            openSurah(
-                originalNumber,
-                surah[0]
-            );
+        button.onclick = function(){
+
+            openSurah(number);
 
         };
 
 
-        item.innerHTML = `
+        button.innerHTML = `
 
-            <div class="number">
-                ${originalNumber}
+            <div class="surah-number">
+                ${number}
             </div>
 
             <div class="surah-info">
@@ -583,58 +772,64 @@ function displaySurahs(list){
 
             </div>
 
-            <div class="surah-arrow">
-                ‹
+            <div class="arrow">
+                ←
             </div>
 
         `;
 
 
-        container.appendChild(item);
+        container.appendChild(button);
 
     });
 
 }
 
 
+/* =========================
+   فتح السورة
+========================= */
+
+function openSurah(number){
+
+    window.location.href =
+        "surah.html?surah=" +
+        number;
+
+}
+
+
+/* =========================
+   البحث
+========================= */
+
 function searchSurahs(){
 
-    const value =
-        document
-        .getElementById("search")
+    const input =
+        document.getElementById("searchInput")
         .value
         .trim()
         .toLowerCase();
 
 
     const filtered =
-        surahs.filter(
-            surah =>
-            surah[0]
-            .toLowerCase()
-            .includes(value)
-        );
+        surahs.filter(function(surah){
+
+            return surah[0]
+                .toLowerCase()
+                .includes(input);
+
+        });
 
 
-    displaySurahs(filtered);
-
-}
-
-
-function openSurah(number,name){
-
-    alert(
-        "📖 سورة " +
-        name +
-        "\n\n" +
-        "عدد الآيات: " +
-        surahs[number-1][1] +
-        "\n\n" +
-        "صفحة قراءة السورة سنبنيها في الخطوة القادمة بإذن الله 🌿"
-    );
+    renderSurahs(filtered);
 
 }
 
+
+/* =========================
+   الرجوع للرئيسية
+========================= */
 
 function goHome(){
 
@@ -643,10 +838,13 @@ function goHome(){
 }
 
 
-displaySurahs(surahs);
+/* تشغيل القائمة */
+
+renderSurahs(surahs);
 
 </script>
 
 
 </body>
-  </html>
+
+    </html>
