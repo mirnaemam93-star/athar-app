@@ -1,497 +1,584 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>أَثَر | ATHAR</title>
+<title>أَثَر | ATHAR</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+    background:#f6f0e5;
+    color:#123f32;
+    padding-bottom:100px;
+}
+
+/* HEADER */
+
+.header{
+    background:linear-gradient(145deg,#063d2d,#12634a);
+    min-height:330px;
+    padding:22px 20px 65px;
+    border-radius:0 0 55px 55px;
+    position:relative;
+    overflow:hidden;
+}
+
+.header:before{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    border:1px solid rgba(226,195,102,.5);
+    border-radius:50%;
+    top:-145px;
+    right:-70px;
+}
+
+.header:after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border:1px solid rgba(226,195,102,.2);
+    border-radius:50%;
+    bottom:-120px;
+    left:-80px;
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.circle-btn{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.09);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+}
+
+.logo{
+    text-align:center;
+    margin-top:15px;
+    color:#e4c568;
+    font-size:50px;
+    font-weight:800;
+    line-height:1;
+}
+
+.english{
+    text-align:center;
+    color:#e4c568;
+    letter-spacing:6px;
+    font-size:15px;
+    margin-top:8px;
+}
+
+.greeting{
+    text-align:center;
+    color:white;
+    margin-top:35px;
+}
+
+.greeting h1{
+    font-size:29px;
+    font-weight:700;
+}
+
+.greeting p{
+    margin-top:10px;
+    font-size:17px;
+    opacity:.9;
+}
+
+/* CONTENT */
+
+.container{
+    width:92%;
+    max-width:650px;
+    margin:-35px auto 0;
+    position:relative;
+    z-index:3;
+}
+
+.card{
+    background:#fffdf8;
+    border-radius:28px;
+    padding:24px;
+    margin-bottom:20px;
+    box-shadow:0 8px 30px rgba(24,55,42,.08);
+}
+
+/* DAILY */
+
+.daily-title{
+    text-align:center;
+    font-size:25px;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.daily-title span{
+    color:#70a844;
+}
+
+.daily-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.daily-item{
+    text-align:center;
+    padding:5px 8px;
+    border-left:1px solid #ded8cb;
+}
+
+.daily-item:last-child{
+    border-left:none;
+}
+
+.daily-icon{
+    font-size:31px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.daily-item strong{
+    display:block;
+    margin-top:8px;
+    color:#163f33;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.daily-item small{
+    color:#555;
+    font-size:12px;
+}
+
+.start-btn{
+    width:100%;
+    border:0;
+    border-radius:18px;
+    background:linear-gradient(135deg,#0b5941,#063d2d);
+    color:white;
+    padding:17px;
+    margin-top:25px;
+    font-family:inherit;
+    font-size:18px;
+    font-weight:800;
+    box-shadow:0 7px 18px rgba(6,61,45,.2);
+    cursor:pointer;
+}
+
+/* VERSE */
+
+.verse{
+    background:#fffaf0;
+    border:1px solid #e7d49d;
+    text-align:center;
+    position:relative;
+}
+
+.verse-label{
+    color:#146044;
+    font-weight:800;
+    font-size:19px;
+    margin-bottom:18px;
+}
+
+.verse-text{
+    font-family:'Amiri',serif;
+    font-size:27px;
+    line-height:2;
+    color:#151515;
+}
+
+.verse-source{
+    color:#8a7133;
+    font-size:13px;
+    margin-top:7px;
+}
+
+.read-btn{
+    display:inline-block;
+    margin-top:18px;
+    background:#ead9ac;
+    color:#705b2c;
+    padding:9px 20px;
+    border-radius:25px;
+    font-size:14px;
+    font-weight:700;
+}
+
+/* QUICK */
+
+.section-title{
+    text-align:center;
+    font-size:23px;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.quick{
+    background:#fbf7ee;
+    border:1px solid #eee5d5;
+    border-radius:20px;
+    padding:16px 5px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.quick:active{
+    transform:scale(.95);
+}
+
+.quick-icon{
+    font-size:29px;
+    margin-bottom:8px;
+}
+
+.quick strong{
+    font-size:13px;
+}
+
+/* FEELINGS */
+
+.feeling-title{
+    text-align:center;
+    font-size:21px;
+    font-weight:800;
+    margin-bottom:16px;
+}
+
+.feelings{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.feeling{
+    border:1px solid #eee3d0;
+    background:#fffaf1;
+    border-radius:17px;
+    padding:13px 5px;
+    font-family:inherit;
+    font-size:14px;
+    font-weight:600;
+    color:#24483d;
+    cursor:pointer;
+}
+
+/* FOOTER NAV */
+
+.bottom-nav{
+    position:fixed;
+    bottom:10px;
+    left:3%;
+    right:3%;
+    max-width:650px;
+    margin:auto;
+    height:72px;
+    background:#063d2d;
+    border-radius:32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    box-shadow:0 8px 25px rgba(0,0,0,.22);
+    z-index:100;
+}
+
+.nav{
+    color:white;
+    text-align:center;
+    font-size:11px;
+    opacity:.9;
+    min-width:55px;
+}
+
+.nav-icon{
+    display:block;
+    font-size:23px;
+    margin-bottom:2px;
+}
+
+.nav.active{
+    background:rgba(255,255,255,.15);
+    border-radius:22px;
+    padding:8px 14px;
+}
+
+/* MOBILE */
+
+@media(max-width:420px){
+
+    .header{
+        min-height:315px;
     }
 
-    body {
-      font-family: Arial, Tahoma, sans-serif;
-      background: #f6f0e4;
-      color: #163f32;
-      padding-bottom: 90px;
+    .logo{
+        font-size:45px;
     }
 
-    .header {
-      background: linear-gradient(145deg, #073f2f, #126044);
-      color: white;
-      padding: 25px 20px 45px;
-      border-bottom-left-radius: 45px;
-      border-bottom-right-radius: 45px;
-      position: relative;
-      overflow: hidden;
+    .greeting h1{
+        font-size:26px;
     }
 
-    .header::before {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border: 1px solid #d8b85c;
-      border-radius: 50%;
-      top: -90px;
-      right: -70px;
-      opacity: .6;
+    .daily-title{
+        font-size:23px;
     }
 
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .daily-item strong{
+        font-size:12px;
     }
 
-    .icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 21px;
+    .daily-item small{
+        font-size:11px;
     }
 
-    .logo {
-      text-align: center;
-      font-size: 43px;
-      font-weight: bold;
-      color: #e4c66c;
-      margin-top: 5px;
+    .quick strong{
+        font-size:11px;
     }
 
-    .athar {
-      text-align: center;
-      color: #e4c66c;
-      letter-spacing: 4px;
-      font-size: 15px;
-      margin-top: -5px;
+    .verse-text{
+        font-size:24px;
     }
-
-    .greeting {
-      text-align: center;
-      margin-top: 25px;
-    }
-
-    .greeting h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .greeting p {
-      font-size: 17px;
-      opacity: .9;
-    }
-
-    .container {
-      width: 92%;
-      max-width: 600px;
-      margin: -20px auto 0;
-      position: relative;
-    }
-
-    .card {
-      background: #fffdf8;
-      border-radius: 25px;
-      padding: 22px;
-      margin-bottom: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.08);
-    }
-
-    .card-title {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 22px;
-    }
-
-    .daily-items {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-    }
-
-    .daily-item {
-      text-align: center;
-      padding: 5px;
-      border-left: 1px solid #ddd5c6;
-    }
-
-    .daily-item:last-child {
-      border-left: none;
-    }
-
-    .daily-item .emoji {
-      font-size: 31px;
-      margin-bottom: 10px;
-    }
-
-    .daily-item p {
-      font-size: 14px;
-      line-height: 1.5;
-      color: #222;
-    }
-
-    .start-btn {
-      width: 100%;
-      border: none;
-      background: #104f3b;
-      color: white;
-      padding: 16px;
-      border-radius: 16px;
-      font-size: 18px;
-      font-weight: bold;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-
-    .verse {
-      border: 1px solid #ead9ad;
-      background: #fffaf0;
-      text-align: center;
-    }
-
-    .verse-title {
-      color: #146045;
-      font-size: 18px;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-
-    .verse-text {
-      font-family: "Times New Roman", serif;
-      font-size: 25px;
-      line-height: 2;
-      color: #171717;
-    }
-
-    .verse-source {
-      color: #806b35;
-      margin-top: 12px;
-      font-size: 14px;
-    }
-
-    .more-btn {
-      display: inline-block;
-      margin-top: 18px;
-      background: #ead9ad;
-      color: #705b2c;
-      padding: 10px 22px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .quick-title {
-      text-align: center;
-      font-size: 23px;
-      margin-bottom: 18px;
-    }
-
-    .quick-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-
-    .quick {
-      background: #fffaf1;
-      border-radius: 18px;
-      padding: 15px 5px;
-      text-align: center;
-      box-shadow: 0 3px 10px rgba(0,0,0,.05);
-      cursor: pointer;
-    }
-
-    .quick .emoji {
-      font-size: 29px;
-      margin-bottom: 8px;
-    }
-
-    .quick p {
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .need-title {
-      text-align: center;
-      font-size: 21px;
-      margin: 22px 0 15px;
-    }
-
-    .needs {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-
-    .need {
-      background: #fffaf1;
-      border: none;
-      padding: 14px 8px;
-      border-radius: 17px;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
-    .bottom-nav {
-      position: fixed;
-      bottom: 10px;
-      left: 4%;
-      right: 4%;
-      max-width: 600px;
-      margin: auto;
-      height: 70px;
-      background: #073f2f;
-      border-radius: 30px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,.2);
-      z-index: 100;
-    }
-
-    .nav-item {
-      color: white;
-      text-align: center;
-      font-size: 12px;
-      opacity: .9;
-      cursor: pointer;
-    }
-
-    .nav-item .emoji {
-      font-size: 22px;
-      display: block;
-      margin-bottom: 3px;
-    }
-
-    .nav-item.active {
-      background: rgba(255,255,255,.18);
-      padding: 9px 15px;
-      border-radius: 20px;
-    }
-
-    @media (max-width: 420px) {
-      .logo {
-        font-size: 38px;
-      }
-
-      .daily-item p {
-        font-size: 12px;
-      }
-
-      .quick p {
-        font-size: 12px;
-      }
-
-      .verse-text {
-        font-size: 21px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <header class="header">
+<!-- HEADER -->
+
+<header class="header">
 
     <div class="top">
-      <div class="icon">🔔</div>
-      <div class="icon">👤</div>
+        <div class="circle-btn">🔔</div>
+        <div class="circle-btn">👤</div>
     </div>
 
     <div class="logo">أَثَر</div>
-    <div class="athar">ATHAR</div>
+    <div class="english">ATHAR</div>
 
     <div class="greeting">
-      <h1>السلام عليكم 🌿</h1>
-      <p>خلّي لليوم أثرًا طيبًا..</p>
+        <h1>السلام عليكم 🌿</h1>
+        <p>خلّي لليوم أثرًا طيبًا..</p>
     </div>
 
-  </header>
+</header>
 
 
-  <main class="container">
+<main class="container">
 
-    <!-- أثرك اليوم -->
+    <!-- DAILY -->
+
     <section class="card">
 
-      <div class="card-title">
-        أثرك اليوم 🌱
-      </div>
-
-      <div class="daily-items">
-
-        <div class="daily-item">
-          <div class="emoji">📖</div>
-          <p>اقرأ<br>5 آيات</p>
+        <div class="daily-title">
+            أثرك اليوم <span>🌱</span>
         </div>
 
-        <div class="daily-item">
-          <div class="emoji">🤲</div>
-          <p>قل<br>أذكارك</p>
+        <div class="daily-grid">
+
+            <div class="daily-item">
+                <div class="daily-icon">📖</div>
+                <strong>اقرأ</strong>
+                <small>5 آيات</small>
+            </div>
+
+            <div class="daily-item">
+                <div class="daily-icon">🤲</div>
+                <strong>قل</strong>
+                <small>أذكارك</small>
+            </div>
+
+            <div class="daily-item">
+                <div class="daily-icon">🕌</div>
+                <strong>حافظ على</strong>
+                <small>صلاتك</small>
+            </div>
+
+            <div class="daily-item">
+                <div class="daily-icon">❤️</div>
+                <strong>افعل خيرًا</strong>
+                <small>لشخص</small>
+            </div>
+
         </div>
 
-        <div class="daily-item">
-          <div class="emoji">🕌</div>
-          <p>حافظ على<br>صلاتك</p>
-        </div>
-
-        <div class="daily-item">
-          <div class="emoji">❤️</div>
-          <p>افعل خيرًا<br>لشخص</p>
-        </div>
-
-      </div>
-
-      <button class="start-btn" onclick="startDay()">
-        ✨ ابدأ يومك
-      </button>
+        <button class="start-btn" onclick="startDay()">
+            ✨ ابدأ يومك
+        </button>
 
     </section>
 
 
-    <!-- آية اليوم -->
+    <!-- VERSE -->
+
     <section class="card verse">
 
-      <div class="verse-title">
-        ✦ آية اليوم ✦
-      </div>
+        <div class="verse-label">
+            ✦ آية اليوم ✦
+        </div>
 
-      <div class="verse-text">
-        ﴿ وَاذْكُر رَّبَّكَ إِذَا نَسِيتَ ﴾
-      </div>
+        <div class="verse-text">
+            ﴿ وَاذْكُر رَّبَّكَ إِذَا نَسِيتَ ﴾
+        </div>
 
-      <div class="verse-source">
-        سورة الكهف — الآية 24
-      </div>
+        <div class="verse-source">
+            سورة الكهف — الآية 24
+        </div>
 
-      <a href="#" class="more-btn">
-        اقرأ المزيد ←
-      </a>
+        <a href="#" class="read-btn">
+            اقرأ المزيد ←
+        </a>
 
     </section>
 
 
-    <!-- تصفح سريع -->
+    <!-- QUICK -->
+
     <section class="card">
 
-      <div class="quick-title">
-        تصفح سريع
-      </div>
-
-      <div class="quick-grid">
-
-        <div class="quick" onclick="openSection('القرآن')">
-          <div class="emoji">📖</div>
-          <p>القرآن</p>
+        <div class="section-title">
+            تصفح سريع
         </div>
 
-        <div class="quick" onclick="openSection('الأذكار')">
-          <div class="emoji">🤲</div>
-          <p>الأذكار</p>
-        </div>
+        <div class="quick-grid">
 
-        <div class="quick" onclick="openSection('الصلاة')">
-          <div class="emoji">🕌</div>
-          <p>الصلاة</p>
-        </div>
+            <div class="quick" onclick="openPage('القرآن')">
+                <div class="quick-icon">📖</div>
+                <strong>القرآن</strong>
+            </div>
 
-        <div class="quick" onclick="openSection('التدبر')">
-          <div class="emoji">💡</div>
-          <p>التدبر</p>
-        </div>
+            <div class="quick" onclick="openPage('الأذكار')">
+                <div class="quick-icon">🤲</div>
+                <strong>الأذكار</strong>
+            </div>
 
-      </div>
+            <div class="quick" onclick="openPage('الصلاة')">
+                <div class="quick-icon">🕌</div>
+                <strong>الصلاة</strong>
+            </div>
+
+            <div class="quick" onclick="openPage('التدبر')">
+                <div class="quick-icon">💡</div>
+                <strong>التدبر</strong>
+            </div>
+
+        </div>
 
     </section>
 
 
-    <!-- محتاج إيه -->
+    <!-- FEELINGS -->
+
     <section class="card">
 
-      <div class="need-title">
-        محتاج إيه دلوقتي؟ ❤️
-      </div>
+        <div class="feeling-title">
+            محتاج إيه دلوقتي؟ 🤍
+        </div>
 
-      <div class="needs">
+        <div class="feelings">
 
-        <button class="need" onclick="need('حزين')">
-          😔 حزين
-        </button>
+            <button class="feeling" onclick="feeling('حزين')">
+                😔 حزين
+            </button>
 
-        <button class="need" onclick="need('قلقان')">
-          😟 قلقان
-        </button>
+            <button class="feeling" onclick="feeling('قلقان')">
+                😟 قلقان
+            </button>
 
-        <button class="need" onclick="need('عايز أتوب')">
-          🤲 عايز أتوب
-        </button>
+            <button class="feeling" onclick="feeling('عايز أتوب')">
+                🤲 عايز أتوب
+            </button>
 
-        <button class="need" onclick="need('عايز أبدأ')">
-          🌱 عايز أبدأ
-        </button>
+            <button class="feeling" onclick="feeling('عايز أبدأ')">
+                🌱 عايز أبدأ
+            </button>
 
-      </div>
+        </div>
 
     </section>
 
-  </main>
+</main>
 
 
-  <!-- شريط التنقل -->
-  <nav class="bottom-nav">
+<!-- NAVIGATION -->
 
-    <div class="nav-item">
-      <span class="emoji">📖</span>
-      القرآن
+<nav class="bottom-nav">
+
+    <div class="nav">
+        <span class="nav-icon">📖</span>
+        القرآن
     </div>
 
-    <div class="nav-item">
-      <span class="emoji">🤲</span>
-      الأذكار
+    <div class="nav">
+        <span class="nav-icon">🤲</span>
+        الأذكار
     </div>
 
-    <div class="nav-item active">
-      <span class="emoji">🏠</span>
-      الرئيسية
+    <div class="nav active">
+        <span class="nav-icon">⌂</span>
+        الرئيسية
     </div>
 
-    <div class="nav-item">
-      <span class="emoji">🌿</span>
-      أثر
+    <div class="nav">
+        <span class="nav-icon">🌿</span>
+        أثر
     </div>
 
-    <div class="nav-item">
-      <span class="emoji">☰</span>
-      المزيد
+    <div class="nav">
+        <span class="nav-icon">☰</span>
+        المزيد
     </div>
 
-  </nav>
+</nav>
 
 
-  <script>
+<script>
 
-    function startDay() {
-      alert("🌿 جميل! بدأت أول خطوة في يومك.\n\nخلّي يومك مليان خير وأثر طيب ❤️");
-    }
+function startDay(){
+    alert("🌿 بدأت أول خطوة في يومك.\n\nنسأل الله أن يجعل يومك مليئًا بالخير.");
+}
 
-    function openSection(section) {
-      alert("سيتم فتح قسم " + section + " قريبًا 🌿");
-    }
+function openPage(name){
+    alert("قسم " + name + " سيكون متاحًا قريبًا بإذن الله 🌿");
+}
 
-    function need(feeling) {
-      alert("اخترت: " + feeling + "\n\nسنجهز لك محتوى مناسبًا وموثوقًا بإذن الله 🤍");
-    }
+function feeling(name){
+    alert("اخترت: " + name + "\n\nسنجهز لك محتوى مناسبًا وموثوقًا بإذن الله 🤍");
+}
 
-  </script>
+</script>
 
 </body>
   </html>
