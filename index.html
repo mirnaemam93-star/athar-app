@@ -25,10 +25,7 @@ body{
     font-family:'Cairo',sans-serif;
     background:#f6f0e5;
     color:#123f32;
-
-    /* مساحة إضافية حتى لا يغطي شريط التنقل المحتوى */
     padding-bottom:145px;
-
     min-height:100vh;
 }
 
@@ -39,124 +36,86 @@ body{
 
 .header{
     background:linear-gradient(145deg,#063d2d,#12634a);
-
     min-height:330px;
-
     padding:22px 20px 65px;
-
     border-radius:0 0 55px 55px;
-
     position:relative;
-
     overflow:hidden;
 }
 
 .header:before{
     content:"";
-
     position:absolute;
-
     width:260px;
     height:260px;
-
     border:1px solid rgba(226,195,102,.5);
-
     border-radius:50%;
-
     top:-145px;
     right:-70px;
 }
 
 .header:after{
     content:"";
-
     position:absolute;
-
     width:180px;
     height:180px;
-
     border:1px solid rgba(226,195,102,.2);
-
     border-radius:50%;
-
     bottom:-120px;
     left:-80px;
 }
 
 .top{
     display:flex;
-
     justify-content:space-between;
     align-items:center;
-
     position:relative;
-
     z-index:2;
 }
 
 .circle-btn{
     width:48px;
     height:48px;
-
     border-radius:50%;
-
     border:1px solid rgba(255,255,255,.12);
-
     background:rgba(255,255,255,.09);
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     font-size:22px;
 }
 
 .logo{
     text-align:center;
-
     margin-top:15px;
-
     color:#e4c568;
-
     font-size:50px;
-
     font-weight:800;
-
     line-height:1;
 }
 
 .english{
     text-align:center;
-
     color:#e4c568;
-
     letter-spacing:6px;
-
     font-size:15px;
-
     margin-top:8px;
 }
 
 .greeting{
     text-align:center;
-
     color:white;
-
     margin-top:35px;
 }
 
 .greeting h1{
     font-size:29px;
-
     font-weight:700;
 }
 
 .greeting p{
     margin-top:10px;
-
     font-size:17px;
-
     opacity:.9;
 }
 
@@ -167,25 +126,17 @@ body{
 
 .container{
     width:92%;
-
     max-width:650px;
-
     margin:-35px auto 0;
-
     position:relative;
-
     z-index:3;
 }
 
 .card{
     background:#fffdf8;
-
     border-radius:28px;
-
     padding:24px;
-
     margin-bottom:20px;
-
     box-shadow:0 8px 30px rgba(24,55,42,.08);
 }
 
@@ -196,11 +147,8 @@ body{
 
 .daily-title{
     text-align:center;
-
     font-size:25px;
-
     font-weight:800;
-
     margin-bottom:25px;
 }
 
@@ -210,15 +158,12 @@ body{
 
 .daily-grid{
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
 }
 
 .daily-item{
     text-align:center;
-
     padding:5px 8px;
-
     border-left:1px solid #ded8cb;
 }
 
@@ -228,59 +173,38 @@ body{
 
 .daily-icon{
     font-size:31px;
-
     height:48px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 }
 
 .daily-item strong{
     display:block;
-
     margin-top:8px;
-
     color:#163f33;
-
     font-size:14px;
-
     line-height:1.6;
 }
 
 .daily-item small{
     color:#555;
-
     font-size:12px;
 }
 
 .start-btn{
     width:100%;
-
     border:0;
-
     border-radius:18px;
-
     background:linear-gradient(135deg,#0b5941,#063d2d);
-
     color:white;
-
     padding:17px;
-
     margin-top:25px;
-
     font-family:inherit;
-
     font-size:18px;
-
     font-weight:800;
-
     box-shadow:0 7px 18px rgba(6,61,45,.2);
-
     cursor:pointer;
-
     transition:.2s;
 }
 
@@ -295,59 +219,40 @@ body{
 
 .verse{
     background:#fffaf0;
-
     border:1px solid #e7d49d;
-
     text-align:center;
-
     position:relative;
 }
 
 .verse-label{
     color:#146044;
-
     font-weight:800;
-
     font-size:19px;
-
     margin-bottom:18px;
 }
 
 .verse-text{
     font-family:'Amiri',serif;
-
     font-size:27px;
-
     line-height:2;
-
     color:#151515;
 }
 
 .verse-source{
     color:#8a7133;
-
     font-size:13px;
-
     margin-top:7px;
 }
 
 .read-btn{
     display:inline-block;
-
     margin-top:18px;
-
     background:#ead9ac;
-
     color:#705b2c;
-
     padding:9px 20px;
-
     border-radius:25px;
-
     font-size:14px;
-
     font-weight:700;
-
     text-decoration:none;
 }
 
@@ -358,35 +263,24 @@ body{
 
 .section-title{
     text-align:center;
-
     font-size:23px;
-
     font-weight:800;
-
     margin-bottom:18px;
 }
 
 .quick-grid{
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
     gap:10px;
 }
 
 .quick{
     background:#fbf7ee;
-
     border:1px solid #eee5d5;
-
     border-radius:20px;
-
     padding:16px 5px;
-
     text-align:center;
-
     cursor:pointer;
-
     transition:.2s;
 }
 
@@ -396,7 +290,6 @@ body{
 
 .quick-icon{
     font-size:29px;
-
     margin-bottom:8px;
 }
 
@@ -411,41 +304,27 @@ body{
 
 .feeling-title{
     text-align:center;
-
     font-size:21px;
-
     font-weight:800;
-
     margin-bottom:16px;
 }
 
 .feelings{
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
-
     gap:10px;
 }
 
 .feeling{
     border:1px solid #eee3d0;
-
     background:#fffaf1;
-
     border-radius:17px;
-
     padding:13px 5px;
-
     font-family:inherit;
-
     font-size:14px;
-
     font-weight:600;
-
     color:#24483d;
-
     cursor:pointer;
-
     transition:.2s;
 }
 
@@ -460,66 +339,42 @@ body{
 
 .bottom-nav{
     position:fixed;
-
     bottom:12px;
-
     left:3%;
     right:3%;
-
     width:94%;
-
     max-width:650px;
-
     margin:auto;
-
     height:72px;
-
     background:#063d2d;
-
     border-radius:32px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-around;
-
     box-shadow:0 8px 25px rgba(0,0,0,.22);
-
     z-index:1000;
-
     padding:5px;
 }
 
 .nav{
     color:white;
-
     text-align:center;
-
     font-size:11px;
-
     opacity:.9;
-
     min-width:55px;
-
     cursor:pointer;
-
     transition:.2s;
 }
 
 .nav-icon{
     display:block;
-
     font-size:23px;
-
     margin-bottom:2px;
 }
 
 .nav.active{
     background:rgba(255,255,255,.15);
-
     border-radius:22px;
-
     padding:8px 14px;
 }
 
@@ -536,7 +391,6 @@ body{
 
     .header{
         min-height:315px;
-
         padding-left:16px;
         padding-right:16px;
     }
@@ -559,21 +413,17 @@ body{
 
     .container{
         width:91%;
-
         margin-top:-30px;
     }
 
     .card{
         padding:21px;
-
         border-radius:26px;
-
         margin-bottom:18px;
     }
 
     .daily-title{
         font-size:23px;
-
         margin-bottom:22px;
     }
 
@@ -595,7 +445,6 @@ body{
 
     .start-btn{
         font-size:17px;
-
         padding:16px;
     }
 
@@ -621,17 +470,13 @@ body{
 
     .bottom-nav{
         bottom:8px;
-
         width:94%;
-
         height:70px;
-
         border-radius:30px;
     }
 
     .nav{
         min-width:50px;
-
         font-size:10px;
     }
 
@@ -858,7 +703,7 @@ body{
 
 
         <a
-            href="#"
+            href="quran.html"
             class="read-btn">
 
             اقرأ المزيد ←
@@ -1102,7 +947,23 @@ function startDay(){
 }
 
 
+/* =========================
+   فتح الأقسام
+========================= */
+
 function openPage(name){
+
+    /* القرآن أصبح له صفحة فعلية */
+
+    if(name === 'القرآن'){
+
+        window.location.href = "quran.html";
+
+        return;
+    }
+
+
+    /* باقي الأقسام مؤقتًا */
 
     alert(
         "🌿 قسم " +
