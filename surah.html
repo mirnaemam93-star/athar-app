@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>ATHAR | المصحف الشريف</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap"
+      rel="stylesheet">
 
 <style>
 
@@ -20,362 +28,112 @@
 }
 
 body{
-    background:#e1f3f5;
+    background:#e4f4f6;
     color:#111;
     font-family:"Amiri",serif;
     min-height:100vh;
+    padding-bottom:75px;
 }
 
 /* =========================
    HEADER
 ========================= */
 
-.top-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
+.header{
 
     height:105px;
 
     background:#079b91;
+
     color:white;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
     padding:10px 18px;
 
-    box-shadow:0 3px 10px rgba(0,0,0,.18);
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.18);
+
 }
 
-.header-right{
+.header-title{
+
     text-align:right;
+
 }
 
-.surah-title{
-    font-size:35px;
-    font-weight:bold;
+.header-title h1{
+
+    font-size:34px;
+
     line-height:1.1;
+
+    font-weight:bold;
+
 }
 
-.header-subtitle{
+.header-title p{
+
     font-family:"Cairo",sans-serif;
+
     font-size:12px;
+
     opacity:.85;
-    margin-top:3px;
+
+    margin-top:4px;
+
     letter-spacing:1px;
+
 }
 
-.back-button{
+.back{
+
     width:62px;
+
     height:62px;
 
     border-radius:50%;
 
-    border:1px solid rgba(255,255,255,.25);
+    border:1px solid
+        rgba(255,255,255,.25);
 
-    background:rgba(255,255,255,.08);
+    background:
+        rgba(255,255,255,.08);
 
     color:white;
 
     font-size:48px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     cursor:pointer;
 
-    transition:.2s;
-}
-
-.back-button:active{
-    transform:scale(.92);
 }
 
 /* =========================
-   MAIN
+   PAGE
 ========================= */
 
 .page{
-    width:100%;
+
     max-width:900px;
-    margin:auto;
-
-    padding:0 18px 120px;
-}
-
-/* =========================
-   JUZ DECORATION
-========================= */
-
-.juz-wrapper{
-    position:relative;
-
-    margin:0 auto;
-
-    max-width:760px;
-
-    padding:0 20px;
-}
-
-.juz-decoration{
-    height:100px;
-
-    margin-top:0;
-
-    background:
-        radial-gradient(circle at 50% 50%, #f5df72 0 22px, transparent 23px),
-        linear-gradient(
-            90deg,
-            #0b9c9a 0%,
-            #e9a0bf 18%,
-            #0b9c9a 35%,
-            #f0d76d 50%,
-            #0b9c9a 65%,
-            #e9a0bf 82%,
-            #0b9c9a 100%
-        );
-
-    border:5px solid #087f82;
-
-    box-shadow:
-        inset 0 0 0 3px #f3d56c,
-        0 3px 8px rgba(0,0,0,.12);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.juz-decoration::before,
-.juz-decoration::after{
-    content:"";
-
-    position:absolute;
-
-    top:12px;
-    bottom:12px;
-
-    width:70px;
-
-    border:4px solid #e6b6cf;
-
-    background:#079a9b;
-
-    transform:skewX(-18deg);
-}
-
-.juz-decoration::before{
-    right:20px;
-}
-
-.juz-decoration::after{
-    left:20px;
-}
-
-.juz-center{
-    position:relative;
-    z-index:2;
-
-    width:92px;
-    height:72px;
-
-    border-radius:50%;
-
-    background:#f4e6a4;
-
-    border:4px solid #088d8d;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    font-family:"Cairo",sans-serif;
-    font-weight:bold;
-
-    color:#111;
-}
-
-.juz-center span{
-    display:block;
-    font-size:12px;
-}
-
-.juz-center strong{
-    display:block;
-    font-size:18px;
-}
-
-.juz-side{
-    position:absolute;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    z-index:3;
-
-    background:#f7e8b1;
-
-    border-radius:50%;
-
-    width:48px;
-    height:48px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-family:"Cairo",sans-serif;
-
-    font-size:15px;
-    font-weight:bold;
-
-    color:#111;
-}
-
-.juz-side.right{
-    right:120px;
-}
-
-.juz-side.left{
-    left:120px;
-}
-
-.juz-label{
-    text-align:center;
-
-    font-family:"Cairo",sans-serif;
-
-    font-size:12px;
-
-    color:#555;
-
-    margin-top:7px;
-}
-
-/* =========================
-   SURAH NAME
-========================= */
-
-.surah-cover{
-    text-align:center;
-
-    padding:28px 10px 18px;
-}
-
-.bismillah{
-    font-size:42px;
-    font-weight:bold;
-
-    margin-bottom:15px;
-
-    color:#111;
-}
-
-.surah-name-large{
-    display:inline-block;
-
-    padding:9px 28px;
-
-    border-top:2px solid #0a928d;
-    border-bottom:2px solid #0a928d;
-
-    font-size:27px;
-
-    color:#087e79;
-}
-
-/* =========================
-   QURAN TEXT
-========================= */
-
-.quran-container{
-    max-width:850px;
 
     margin:auto;
 
-    font-family:"Amiri",serif;
-
-    text-align:justify;
-
-    line-height:2.25;
-
-    font-size:31px;
-
-    padding:10px 12px;
-}
-
-.quran-text{
-    direction:rtl;
-}
-
-/* الآية */
-
-.ayah{
-    display:inline;
-
-    cursor:pointer;
-
-    transition:background .2s;
-}
-
-.ayah.active{
-    background:rgba(8,155,145,.12);
-
-    border-radius:8px;
-}
-
-/* رقم الآية */
-
-.ayah-number{
-    display:inline-flex;
-
-    width:42px;
-    height:42px;
-
-    align-items:center;
-    justify-content:center;
-
-    vertical-align:middle;
-
-    margin:0 7px;
-
-    border:2px solid #222;
-
-    border-radius:50%;
-
-    font-family:"Amiri",serif;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    color:#111;
-
-    background:#e1f3f5;
-}
-
-/* البسملة */
-
-.basmala{
-    text-align:center;
-
-    font-size:38px;
-
-    font-weight:bold;
-
-    margin:10px 0 25px;
-
-    color:#111;
 }
 
 /* =========================
@@ -383,43 +141,34 @@ body{
 ========================= */
 
 .loading{
-    min-height:450px;
+
+    min-height:550px;
 
     display:flex;
 
     flex-direction:column;
 
     align-items:center;
-    justify-content:center;
 
-    text-align:center;
+    justify-content:center;
 
     font-family:"Cairo",sans-serif;
 
-    color:#087f79;
+    color:#078d87;
+
 }
 
 .loading-icon{
+
     font-size:65px;
 
     margin-bottom:15px;
 
-    animation:float 1.5s ease-in-out infinite;
 }
 
 .loading-text{
+
     font-size:18px;
-}
-
-@keyframes float{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
 
 }
 
@@ -428,103 +177,300 @@ body{
 ========================= */
 
 .error{
-    min-height:350px;
+
+    min-height:500px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
+
+    padding:25px;
 
     text-align:center;
 
     font-family:"Cairo",sans-serif;
 
-    padding:30px;
 }
 
 .error-box{
+
     background:white;
 
     border-radius:20px;
 
-    padding:25px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    padding:30px;
 
     max-width:500px;
 
-    margin:auto;
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.1);
+
+}
+
+.error-box h2{
+
+    margin:12px 0;
+
 }
 
 .retry{
+
     margin-top:20px;
 
+    padding:12px 25px;
+
     border:0;
+
+    border-radius:12px;
 
     background:#079b91;
 
     color:white;
 
-    padding:12px 25px;
-
-    border-radius:12px;
-
     font-family:"Cairo",sans-serif;
 
-    cursor:pointer;
+    font-size:16px;
+
 }
 
 /* =========================
-   FONT CONTROLS
+   MUSHAF TOP
 ========================= */
 
-.font-controls{
-    position:fixed;
+.mushaf-top{
 
-    left:18px;
+    height:105px;
 
-    bottom:95px;
+    margin:0 15px;
 
-    z-index:900;
+    position:relative;
+
+    overflow:hidden;
+
+    border:5px solid #087e82;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #079b91,
+            #e8a1bd,
+            #079b91,
+            #f0d36b,
+            #079b91,
+            #e8a1bd,
+            #079b91
+        );
+
+    box-shadow:
+        inset 0 0 0 3px #f1d36d;
 
     display:flex;
 
-    flex-direction:column;
+    align-items:center;
 
-    gap:12px;
+    justify-content:center;
+
 }
 
-.font-button{
-    width:58px;
-    height:58px;
+/* الزخارف */
+
+.mushaf-top:before,
+.mushaf-top:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+
+    height:75px;
+
+    top:10px;
+
+    background:#0a9997;
+
+    border:4px solid #e8a1bd;
+
+    transform:skewX(-18deg);
+
+}
+
+.mushaf-top:before{
+
+    right:20px;
+
+}
+
+.mushaf-top:after{
+
+    left:20px;
+
+}
+
+/* مركز الزخرفة */
+
+.mushaf-center{
+
+    width:100px;
+
+    height:75px;
 
     border-radius:50%;
 
-    border:none;
+    background:#f3e6a5;
 
-    background:#fff;
+    border:4px solid #087f82;
 
-    color:#078e87;
+    display:flex;
 
-    font-size:27px;
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    z-index:2;
+
+    font-family:"Cairo",sans-serif;
 
     font-weight:bold;
 
-    box-shadow:0 4px 15px rgba(0,0,0,.12);
+}
 
-    cursor:pointer;
+.mushaf-center div{
+
+    text-align:center;
+
+}
+
+.mushaf-center small{
+
+    display:block;
+
+    font-size:11px;
+
+}
+
+.mushaf-center strong{
+
+    display:block;
+
+    font-size:20px;
+
 }
 
 /* =========================
-   BOTTOM NAV
+   SURAH TITLE
 ========================= */
 
-.bottom-nav{
+.surah-heading{
+
+    text-align:center;
+
+    padding:25px 15px 15px;
+
+}
+
+.bismillah{
+
+    font-size:40px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+.surah-name{
+
+    display:inline-block;
+
+    padding:8px 28px;
+
+    border-top:2px solid #078d87;
+
+    border-bottom:2px solid #078d87;
+
+    color:#07857f;
+
+    font-size:27px;
+
+}
+
+/* =========================
+   QURAN
+========================= */
+
+.quran{
+
+    padding:5px 18px 35px;
+
+    font-size:32px;
+
+    line-height:2.25;
+
+    text-align:justify;
+
+    direction:rtl;
+
+}
+
+/* الآية */
+
+.ayah{
+
+    display:inline;
+
+}
+
+/* رقم الآية */
+
+.ayah-number{
+
+    display:inline-flex;
+
+    width:42px;
+
+    height:42px;
+
+    border:2px solid #222;
+
+    border-radius:50%;
+
+    align-items:center;
+
+    justify-content:center;
+
+    vertical-align:middle;
+
+    margin:
+
+        0 6px;
+
+    font-size:18px;
+
+    font-family:"Amiri",serif;
+
+    background:#e4f4f6;
+
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.bottom{
+
     position:fixed;
 
-    bottom:0;
     left:0;
+
     right:0;
+
+    bottom:0;
 
     height:72px;
 
@@ -532,18 +478,16 @@ body{
 
     display:flex;
 
-    align-items:center;
-    justify-content:space-around;
+    z-index:2000;
 
-    z-index:1000;
+    box-shadow:
+        0 -3px 12px rgba(0,0,0,.15);
 
-    box-shadow:0 -3px 12px rgba(0,0,0,.15);
 }
 
-.nav-button{
-    flex:1;
+.bottom button{
 
-    height:100%;
+    flex:1;
 
     border:0;
 
@@ -555,31 +499,51 @@ body{
 
     font-size:18px;
 
-    cursor:pointer;
-}
-
-.nav-button:active{
-    background:rgba(255,255,255,.1);
 }
 
 /* =========================
-   NEXT SECTION
+   FONT CONTROLS
 ========================= */
 
-.next-loader{
-    text-align:center;
+.font-controls{
 
-    padding:35px;
+    position:fixed;
 
-    font-family:"Cairo",sans-serif;
+    left:18px;
 
-    color:#087f79;
+    bottom:95px;
 
-    font-size:15px;
+    z-index:1500;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
 }
 
-.surah-section{
-    scroll-margin-top:115px;
+.font-controls button{
+
+    width:58px;
+
+    height:58px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#078d87;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.13);
+
 }
 
 /* =========================
@@ -588,114 +552,113 @@ body{
 
 @media(max-width:600px){
 
-    .top-header{
-        height:105px;
+    .header-title h1{
+
+        font-size:31px;
+
     }
 
-    .surah-title{
-        font-size:32px;
-    }
+    .back{
 
-    .back-button{
         width:58px;
+
         height:58px;
+
         font-size:44px;
+
     }
 
-    .juz-decoration{
-        height:85px;
+    .mushaf-top{
+
+        height:90px;
+
     }
 
-    .juz-side.right{
-        right:80px;
-    }
+    .quran{
 
-    .juz-side.left{
-        left:80px;
-    }
-
-    .quran-container{
         font-size:29px;
+
         line-height:2.25;
-        padding:5px 4px;
+
+        padding:
+            5px 10px 35px;
+
     }
 
     .ayah-number{
-        width:36px;
-        height:36px;
+
+        width:37px;
+
+        height:37px;
 
         font-size:16px;
 
         margin:0 4px;
+
     }
 
     .bismillah{
+
         font-size:34px;
+
     }
 
-    .surah-name-large{
+    .surah-name{
+
         font-size:24px;
-    }
 
-}
-
-/* شاشة أصغر */
-
-@media(max-width:390px){
-
-    .surah-title{
-        font-size:28px;
-    }
-
-    .quran-container{
-        font-size:27px;
-    }
-
-    .ayah-number{
-        width:33px;
-        height:33px;
-        font-size:15px;
     }
 
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =========================
      HEADER
 ========================= -->
 
-<header class="top-header">
+<header class="header">
 
-    <button class="back-button" onclick="goBack()">
+    <button
+        class="back"
+        onclick="goBack()">
+
         ‹
+
     </button>
 
-    <div class="header-right">
 
-        <div class="surah-title" id="headerSurah">
+    <div class="header-title">
+
+        <h1 id="surahTitle">
             سورة الفاتحة
-        </div>
+        </h1>
 
-        <div class="header-subtitle">
-            ATHAR &nbsp; • &nbsp; المصحف الشريف
-        </div>
+        <p>
+            ATHAR
+            &nbsp; • &nbsp;
+            المصحف الشريف
+        </p>
 
     </div>
 
 </header>
 
 
+
 <!-- =========================
-     MAIN
+     CONTENT
 ========================= -->
 
 <main class="page">
 
-    <div id="surahContent">
+    <div id="content">
 
         <div class="loading">
 
@@ -714,79 +677,86 @@ body{
 </main>
 
 
+
 <!-- =========================
-     FONT CONTROLS
+     FONT BUTTONS
 ========================= -->
 
 <div class="font-controls">
 
-    <button class="font-button" onclick="changeFont(2)">
+    <button onclick="changeFont(2)">
         +
     </button>
 
-    <button class="font-button" onclick="changeFont(-2)">
+    <button onclick="changeFont(-2)">
         −
     </button>
 
 </div>
 
 
+
 <!-- =========================
-     BOTTOM NAV
+     BOTTOM
 ========================= -->
 
-<nav class="bottom-nav">
+<nav class="bottom">
 
-    <button class="nav-button" onclick="previousSurah()">
+    <button onclick="previousSurah()">
         السابق
     </button>
 
-    <button class="nav-button" onclick="goQuran()">
+    <button onclick="goQuran()">
         القرآن
     </button>
 
-    <button class="nav-button" onclick="nextSurah()">
+    <button onclick="nextSurah()">
         التالي
     </button>
 
 </nav>
 
 
+
 <script>
 
-/* =====================================================
-   ATHAR QURAN READER
-===================================================== */
+/* =========================================
+   ATHAR
+   QURAN READER
+========================================= */
 
 
-/* رقم السورة */
+/* رقم السورة من الرابط */
 
-const urlParams = new URLSearchParams(window.location.search);
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
 
-let currentSurah =
-    parseInt(urlParams.get("surah")) || 1;
+let surahNumber =
+    Number(
+        params.get("surah")
+    ) || 1;
 
 
-/* التأكد من الرقم */
+/* حماية الرقم */
 
-if(currentSurah < 1){
-    currentSurah = 1;
+if(surahNumber < 1){
+
+    surahNumber = 1;
+
 }
 
-if(currentSurah > 114){
-    currentSurah = 114;
+if(surahNumber > 114){
+
+    surahNumber = 114;
+
 }
-
-
-/* حجم الخط */
-
-let fontSize =
-    parseInt(localStorage.getItem("atharFontSize")) || 31;
 
 
 /* أسماء السور */
 
-const surahNames = [
+const names = [
 
 "الفاتحة",
 "البقرة",
@@ -906,469 +876,463 @@ const surahNames = [
 ];
 
 
-/* =====================================================
-   BACK BUTTON
-===================================================== */
+/* =========================================
+   BACK
+========================================= */
 
 function goBack(){
 
-    /*
-       يرجع مباشرة لقائمة السور
-       بدل ما يعتمد على سجل المتصفح
-    */
-
-    window.location.href = "quran.html";
+    window.location.href =
+        "quran.html";
 
 }
 
 
-/* =====================================================
-   GO TO QURAN
-===================================================== */
+/* =========================================
+   QURAN LIST
+========================================= */
 
 function goQuran(){
 
-    window.location.href = "quran.html";
+    window.location.href =
+        "quran.html";
 
 }
 
 
-/* =====================================================
+/* =========================================
    API
-===================================================== */
+========================================= */
 
-async function fetchSurah(number){
+async function getSurah(number){
 
-    /*
-       نحاول أكثر من نسخة من الـ API
-       حتى لو واحدة لم تستجب
-    */
-
-    const urls = [
-
-        `https://api.alquran.cloud/v1/surah/${number}/quran-uthmani-quran-academy`,
-
-        `https://api.alquran.cloud/v1/surah/${number}/quran-uthmani`,
-
-        `https://api.alquran.cloud/v1/surah/${number}`
-
-    ];
+    const url =
+        "https://api.alquran.cloud/v1/surah/"
+        + number
+        + "/quran-uthmani-quran-academy";
 
 
-    let lastError = null;
-
-
-    for(const url of urls){
-
-        try{
-
-            const controller =
-                new AbortController();
-
-            const timeout =
-                setTimeout(
-                    () => controller.abort(),
-                    12000
-                );
-
-
-            const response =
-                await fetch(
-                    url,
-                    {
-                        signal:controller.signal
-                    }
-                );
-
-
-            clearTimeout(timeout);
-
-
-            if(!response.ok){
-
-                throw new Error(
-                    "HTTP " + response.status
-                );
-
+    const response =
+        await fetch(
+            url,
+            {
+                method:"GET",
+                cache:"no-store"
             }
+        );
 
 
-            const json =
-                await response.json();
+    if(!response.ok){
 
-
-            if(
-                json &&
-                json.data &&
-                json.data.ayahs
-            ){
-
-                return json.data;
-
-            }
-
-
-        }catch(error){
-
-            lastError = error;
-
-        }
+        throw new Error(
+            "API ERROR "
+            + response.status
+        );
 
     }
 
 
-    throw lastError ||
-        new Error("تعذر تحميل السورة");
+    const result =
+        await response.json();
+
+
+    if(
+        !result ||
+        !result.data ||
+        !result.data.ayahs
+    ){
+
+        throw new Error(
+            "No Quran data"
+        );
+
+    }
+
+
+    return result.data;
 
 }
 
 
-/* =====================================================
-   BUILD SURAH
-===================================================== */
+/* =========================================
+   CREATE PAGE
+========================================= */
 
-function createSurah(data){
+function showSurah(data){
 
-    const container =
-        document.getElementById("surahContent");
-
-
-    container.innerHTML = "";
-
-
-    /* القسم */
-
-    const section =
-        document.createElement("section");
-
-    section.className =
-        "surah-section";
-
-    section.id =
-        "surah-" + data.number;
+    const content =
+        document.getElementById(
+            "content"
+        );
 
 
-    /* =================================================
-       الزخرفة
-    ================================================= */
-
-    const juzWrapper =
-        document.createElement("div");
-
-    juzWrapper.className =
-        "juz-wrapper";
+    document.getElementById(
+        "surahTitle"
+    ).textContent =
+        "سورة " +
+        names[
+            data.number - 1
+        ];
 
 
-    const decoration =
-        document.createElement("div");
+    content.innerHTML = "";
 
-    decoration.className =
-        "juz-decoration";
+
+    /* زخرفة */
+
+    const mushaf =
+        document.createElement(
+            "div"
+        );
+
+    mushaf.className =
+        "mushaf-top";
 
 
     const center =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
     center.className =
-        "juz-center";
+        "mushaf-center";
 
-    center.innerHTML =
-        `
+
+    center.innerHTML = `
+
         <div>
-            <span>السورة</span>
-            <strong>${data.number}</strong>
+
+            <small>
+                السورة
+            </small>
+
+            <strong>
+                ${data.number}
+            </strong>
+
         </div>
-        `;
+
+    `;
 
 
-    const rightNumber =
-        document.createElement("div");
+    mushaf.appendChild(center);
 
-    rightNumber.className =
-        "juz-side right";
-
-    rightNumber.textContent =
-        "ترتيب";
+    content.appendChild(mushaf);
 
 
-    const leftNumber =
-        document.createElement("div");
+    /* عنوان السورة */
 
-    leftNumber.className =
-        "juz-side left";
+    const heading =
+        document.createElement(
+            "div"
+        );
 
-    leftNumber.textContent =
-        data.number;
-
-
-    decoration.appendChild(rightNumber);
-    decoration.appendChild(center);
-    decoration.appendChild(leftNumber);
-
-
-    juzWrapper.appendChild(decoration);
-
-
-    const juzLabel =
-        document.createElement("div");
-
-    juzLabel.className =
-        "juz-label";
-
-    juzLabel.textContent =
-        getJuzLabel(data.number);
-
-
-    juzWrapper.appendChild(juzLabel);
-
-
-    section.appendChild(juzWrapper);
-
-
-    /* =================================================
-       اسم السورة
-    ================================================= */
-
-    const cover =
-        document.createElement("div");
-
-    cover.className =
-        "surah-cover";
+    heading.className =
+        "surah-heading";
 
 
     /*
-       البسملة لا تظهر في التوبة
-       والفاتحة أصلًا تبدأ بالبسملة
+       الفاتحة:
+       أول آية فيها البسملة،
+       لذلك لا نضيف بسملة منفصلة.
     */
 
     if(
-        data.number !== 9 &&
-        data.number !== 1
+        data.number !== 1 &&
+        data.number !== 9
     ){
 
-        const basmala =
-            document.createElement("div");
+        const bismillah =
+            document.createElement(
+                "div"
+            );
 
-        basmala.className =
-            "basmala";
+        bismillah.className =
+            "bismillah";
 
-        basmala.textContent =
+        bismillah.textContent =
             "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ";
 
-        cover.appendChild(basmala);
+        heading.appendChild(
+            bismillah
+        );
 
     }
 
 
-    const surahName =
-        document.createElement("div");
+    const name =
+        document.createElement(
+            "div"
+        );
 
-    surahName.className =
-        "surah-name-large";
+    name.className =
+        "surah-name";
 
-    surahName.textContent =
-        "سُورَةُ " + data.name.replace("سورة ","");
-
-
-    cover.appendChild(surahName);
-
-
-    section.appendChild(cover);
-
-
-    /* =================================================
-       النص
-    ================================================= */
-
-    const quranContainer =
-        document.createElement("div");
-
-    quranContainer.className =
-        "quran-container";
+    name.textContent =
+        "سُورَةُ " +
+        names[
+            data.number - 1
+        ];
 
 
-    const quranText =
-        document.createElement("div");
+    heading.appendChild(name);
 
-    quranText.className =
-        "quran-text";
+    content.appendChild(heading);
 
 
-    /*
-       لو الفاتحة:
-       الآية الأولى هي البسملة بالفعل
-    */
+    /* النص */
+
+    const quran =
+        document.createElement(
+            "div"
+        );
+
+    quran.className =
+        "quran";
+
 
     data.ayahs.forEach(
+        function(ayah){
 
-        (ayah, index) => {
+            const text =
+                document.createElement(
+                    "span"
+                );
 
-            let text =
+            text.className =
+                "ayah";
+
+            text.textContent =
                 ayah.text;
 
 
-            /*
-               في بعض النسخ قد تكون البسملة
-               موجودة داخل أول آية.
-            */
+            const number =
+                document.createElement(
+                    "span"
+                );
 
-            if(
-                data.number !== 1 &&
-                data.number !== 9 &&
-                index === 0
-            ){
-
-                const basmalaText =
-                    "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ";
-
-                if(
-                    text.startsWith(basmalaText)
-                ){
-
-                    text =
-                        text.substring(
-                            basmalaText.length
-                        ).trim();
-
-                }
-
-            }
-
-
-            const ayahSpan =
-                document.createElement("span");
-
-            ayahSpan.className =
-                "ayah";
-
-            ayahSpan.dataset.number =
-                ayah.numberInSurah;
-
-
-            ayahSpan.textContent =
-                text;
-
-
-            const numberSpan =
-                document.createElement("span");
-
-            numberSpan.className =
+            number.className =
                 "ayah-number";
 
-            numberSpan.textContent =
-                convertToArabicNumber(
+            number.textContent =
+                arabicNumber(
                     ayah.numberInSurah
                 );
 
 
-            quranText.appendChild(
-                ayahSpan
-            );
+            quran.appendChild(text);
 
-            quranText.appendChild(
-                numberSpan
-            );
+            quran.appendChild(number);
 
         }
-
     );
 
 
-    quranContainer.appendChild(
-        quranText
-    );
+    content.appendChild(quran);
 
 
-    section.appendChild(
-        quranContainer
-    );
-
-
-    /* =================================================
-       نهاية السورة
-    ================================================= */
-
-    const end =
-        document.createElement("div");
-
-    end.className =
-        "next-loader";
-
-
-    if(data.number < 114){
-
-        end.textContent =
-            "اسحب لأعلى لمتابعة السورة التالية 📖";
-
-    }else{
-
-        end.textContent =
-            "صدق الله العظيم 🤍";
-
-    }
-
-
-    section.appendChild(end);
-
-
-    container.appendChild(section);
-
-
-    /* تحديث الخط */
-
-    applyFontSize();
-
-
-    /* مراقبة نهاية السورة */
-
-    setupNextObserver(
-        section,
-        data.number
-    );
+    applyFont();
 
 }
 
 
-/* =====================================================
-   JUZ LABEL
-===================================================== */
-
-function getJuzLabel(number){
-
-    if(number === 1 || number === 2){
-
-        return "الجزء الأول";
-
-    }
-
-    if(number >= 3 && number <= 4){
-
-        return "الجزء الثالث";
-
-    }
-
-    return "المصحف الشريف";
-
-}
-
-
-/* =====================================================
+/* =========================================
    ARABIC NUMBERS
-===================================================== */
+========================================= */
 
-function convertToArabicNumber(number){
+function arabicNumber(number){
 
-    const arabic =
-        [
-            "٠","١","٢","٣","٤",
-            "٥","٦","٧","٨","٩"
-        ];
+    const digits = [
+        "٠","١","٢","٣","٤",
+        "٥","٦","٧","٨","٩"
+    ];
 
 
     return String(number)
         .split("")
         .map(
-            digit => arabic[
-                parseInt(digit)
-            ]
-  
+            function(x){
+
+                return digits[
+                    Number(x)
+                ];
+
+            }
+        )
+        .join("");
+
+}
+
+
+/* =========================================
+   LOAD
+========================================= */
+
+async function load(){
+
+    try{
+
+        const data =
+            await getSurah(
+                surahNumber
+            );
+
+
+        showSurah(data);
+
+
+    }catch(error){
+
+        console.error(error);
+
+
+        document.getElementById(
+            "content"
+        ).innerHTML = `
+
+            <div class="error">
+
+                <div class="error-box">
+
+                    <div style="font-size:60px;">
+                        📖
+                    </div>
+
+                    <h2>
+                        لم نتمكن من فتح السورة
+                    </h2>
+
+                    <p>
+                        يبدو أن الاتصال بمصدر
+                        القرآن لم يكتمل.
+                    </p>
+
+                    <button
+                        class="retry"
+                        onclick="load()">
+
+                        إعادة المحاولة
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================
+   FONT
+========================================= */
+
+let fontSize =
+    Number(
+        localStorage.getItem(
+            "athar-font-size"
+        )
+    ) || 32;
+
+
+function changeFont(amount){
+
+    fontSize += amount;
+
+
+    if(fontSize < 22){
+
+        fontSize = 22;
+
+    }
+
+
+    if(fontSize > 48){
+
+        fontSize = 48;
+
+    }
+
+
+    localStorage.setItem(
+        "athar-font-size",
+        fontSize
+    );
+
+
+    applyFont();
+
+}
+
+
+function applyFont(){
+
+    const quran =
+        document.querySelector(
+            ".quran"
+        );
+
+
+    if(quran){
+
+        quran.style.fontSize =
+            fontSize + "px";
+
+    }
+
+}
+
+
+/* =========================================
+   PREVIOUS
+========================================= */
+
+function previousSurah(){
+
+    if(surahNumber <= 1){
+
+        return;
+
+    }
+
+
+    window.location.href =
+        "surah.html?surah="
+        + (surahNumber - 1);
+
+}
+
+
+/* =========================================
+   NEXT
+========================================= */
+
+function nextSurah(){
+
+    if(surahNumber >= 114){
+
+        return;
+
+    }
+
+
+    window.location.href =
+        "surah.html?surah="
+        + (surahNumber + 1);
+
+}
+
+
+/* =========================================
+   START
+========================================= */
+
+load();
+
+</script>
+
+</body>
+    </html>
